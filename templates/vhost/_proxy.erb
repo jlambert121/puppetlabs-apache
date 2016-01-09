@@ -58,6 +58,11 @@
     SetEnv <%= setenv_var %>
     <%- end -%>
   <%- end -%>
+  <%- if proxy['options'] -%>
+    <%- proxy['options'].keys.sort.each do |key| -%>
+    <%= key %> <%= proxy['options'][key] %>
+    <%- end -%>
+  <%- end -%>
   </Location>
 <% end -%>
 <% if @proxy_dest -%>
